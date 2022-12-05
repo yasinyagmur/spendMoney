@@ -6,22 +6,36 @@ import products from "./assets/products.json";
 function App() {
   const [money, setMoney] = useState(100); // start money
   const [basket, setBasket] = useState([]);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    console.log(basket);
+    setTotal(
+      basket.reduce((acc, item) => {
+        return (
+          acc +
+          item.amount * products.find((product) => product.id === item.id).price
+        );
+      }, 0)
+    );
   }, [basket]);
 
+  const resetBasket = () => {
+    setBasket([]);
+  };
   return (
     <div className="App">
-      <Header money={money} />
+      <Header total={total} money={money} />
       {products.map((product) => (
         <Product
           key={product.id}
           basket={basket}
           setBasket={setBasket}
           product={product}
+          total={total}
+          money={money}
         />
       ))}
+      <button onClick={resetBasket}>Sepeti Sıfırla</button>
     </div>
   );
 }
