@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Product from "./components/Product/Product";
 import products from "./assets/products.json";
+import Basket from "./components/Basket/Basket";
 
 function App() {
-  const [money, setMoney] = useState(100); // start money
+  const [money, setMoney] = useState(1000000); // start money
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
 
@@ -35,7 +36,14 @@ function App() {
           money={money}
         />
       ))}
-      <button onClick={resetBasket}>Sepeti Sıfırla</button>
+      {total > 0 && (
+        <Basket
+          products={products}
+          basket={basket}
+          total={total}
+          resetBasket={resetBasket}
+        />
+      )}
     </div>
   );
 }
