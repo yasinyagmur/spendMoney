@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(to bottom, rgb(2, 100, 2), rgb(15, 219, 97));
+  background: linear-gradient(to bottom, rgb(3, 112, 3), #0fdb61);
   height: 60px;
   display: flex;
   justify-content: center;

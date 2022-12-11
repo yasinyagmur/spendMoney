@@ -3,8 +3,51 @@
   background-color: rgba(158, 158, 158, 0.164);
   border: 1px solid #ddd;
   margin-top: 5rem;
-  width: 30%;
+  width: 25%;
 }
 .product img {
   width: 100%;
+}
+.product h6 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.product .price {
+  font-size: 16px;
+  color: rgb(7, 153, 34);
+  font-weight: 600;
+}
+
+.product .actions {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.actions button {
+  height: 40px;
+  padding: 0 15px;
+  flex: 1;
+  cursor: pointer;
+}
+.actions button[disabled] {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+.actions .buy-btn {
+  background-color: #0fdb61;
+  border-radius: 0 5px 5px 0;
+}
+.actions .sell-btn {
+  background-color: #db830f;
+  color: black;
+  border-radius: 5px 0 0 5px;
+}
+.actions .amount {
+  width: 50px;
+  border: 1px solid #ddd;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
