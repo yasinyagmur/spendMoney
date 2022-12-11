@@ -2,5 +2,9 @@
   padding: 10px;
   background-color: rgba(158, 158, 158, 0.164);
   border: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-top: 5rem;
+  width: 30%;
+}
+.product img {
+  width: 100%;
 }

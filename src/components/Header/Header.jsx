@@ -1,14 +1,22 @@
 import React from "react";
+import { moneyFormat } from "../../helpers";
+import "./header.css";
 
 const Header = ({ money, total }) => {
   return (
     <div>
       {total > 0 && money - total !== 0 && (
-        <div>Harcayacak ${money - total} paranız vardır.</div>
+        <div className="header">
+          Harcayacak <span> ${moneyFormat(money - total)}</span> paranız vardır.
+        </div>
       )}
 
-      {total === 0 && <div>Harcayamak için ${money} paranız vardır.</div>}
-      {money - total === 0 && <div>Paran bitti.</div>}
+      {total === 0 && (
+        <div className="header">
+          Harcayamak için <span>${moneyFormat(money)}</span> paranız vardır.
+        </div>
+      )}
+      {money - total === 0 && <div className="header">Paran bitti.</div>}
     </div>
   );
 };

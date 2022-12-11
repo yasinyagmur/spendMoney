@@ -40,6 +40,7 @@ const Product = ({ product, basket, setBasket, total, money }) => {
   return (
     <div className="product">
       <h6>{product.title}</h6>
+      <img src={product.image} alt={product.title} />
       <div className="price">${product.price}</div>
       <div className="actions">
         <button disabled={!basketItem} onClick={removeBasket}>

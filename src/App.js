@@ -26,16 +26,18 @@ function App() {
   return (
     <div className="App">
       <Header total={total} money={money} />
-      {products.map((product) => (
-        <Product
-          key={product.id}
-          basket={basket}
-          setBasket={setBasket}
-          product={product}
-          total={total}
-          money={money}
-        />
-      ))}
+      <div className="container products">
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            basket={basket}
+            setBasket={setBasket}
+            product={product}
+            total={total}
+            money={money}
+          />
+        ))}
+      </div>
       {total > 0 && (
         <Basket
           products={products}
