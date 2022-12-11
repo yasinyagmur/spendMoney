@@ -35,6 +35,7 @@ function App() {
             product={product}
             total={total}
             money={money}
+            setMoney={setMoney}
           />
         ))}
       </div>
